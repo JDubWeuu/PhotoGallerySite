@@ -1,0 +1,47 @@
+/* Always try to use ems before anything else */
+
+body {
+    /* Set a standardized font; since CSS is cascading, we can just change it later if needed by selecting another tag (this is only 0 0 1 specificity, so lowest you can have*/
+    font-family: 'Raleway', sans-serif;
+}
+img {
+    width: 30%;
+    /* three images take up 30%, so there's 10% left */
+    /* For horizontal margins, we want to split it evenly across 6 margins because for 3 images the left and right of each get margins so 3*2 = 6, then 10% which is left, divided by 6 is 1.667 */
+    margin: 2% calc(10%/6);
+    opacity: 1;
+    transition: opacity 0.5s, transform 0.5s, box-shadow 0.5s;
+    border-radius: 10%;
+}
+
+img:hover {
+    cursor: pointer;
+    opacity: 0.5;
+    transform: scale(105%);
+    /* Only want a bottom (or y) shadow, so x_offset is set to 0 */
+    box-shadow: 0 6px 4px 0.05em gray;
+}
+
+nav {
+    text-transform: uppercase;
+    border-bottom: 2px solid #f1f1f1;
+    width: 30%;
+    margin-left: calc(10%/6);
+    /* Only vertical padding, no horizontal padding */
+    padding: calc(20em/24) 0;
+}
+
+a {
+    opacity: 1;
+    font-size: 1.5em;
+    transition: opacity 500ms, font-size 500ms;
+    font-weight: 800;
+    text-decoration: none;
+    color: black;
+}
+
+a:hover {
+    cursor: pointer;
+    opacity: 0.65;
+    font-size: 1.55em;
+}
